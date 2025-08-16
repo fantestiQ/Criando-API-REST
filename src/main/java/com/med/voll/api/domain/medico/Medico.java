@@ -1,6 +1,7 @@
-package com.med.voll.api.medico;
+package com.med.voll.api.domain.medico;
 
 import com.med.voll.api.controller.DadosAtualizacaoMedico;
+import com.med.voll.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Medico {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)  @Column(insertable=false, updatable=false)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)@Column(insertable=false, updatable=false)
     private Long id;
     private String nome;
     private String email;
@@ -44,29 +45,6 @@ public class Medico {
         this.endereco = new Endereco(dados.endereco());
     }
 
-
-    // Foi criado os getters pq a anotação nn funfou
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCrm() {
-        return crm;
-    }
-
-    public Especialidade getEspecialidade() {
-        return especialidade;
-    }
 
     public void atualizarInformacoes(@Valid DadosAtualizacaoMedico dados) {
         if(dados.nome()!= null){this.nome = dados.nome();}

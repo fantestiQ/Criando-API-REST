@@ -1,6 +1,6 @@
-package com.med.voll.api.paciente;
+package com.med.voll.api.domain.paciente;
 
-import com.med.voll.api.medico.Endereco;
+import com.med.voll.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -35,15 +35,5 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
 }

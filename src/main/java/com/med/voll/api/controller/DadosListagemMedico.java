@@ -1,7 +1,7 @@
 package com.med.voll.api.controller;
 
-import com.med.voll.api.medico.Especialidade;
-import com.med.voll.api.medico.Medico;
+import com.med.voll.api.domain.medico.Especialidade;
+import com.med.voll.api.domain.medico.Medico;
 
 public record DadosListagemMedico(Long id,
                                   String nome,
